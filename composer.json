@@ -1,0 +1,16 @@
+{
+  "name": "nikosid/globals",
+  "type": "library",
+  "description": "Comon functions for help php developing",
+  "license": "BSD-3-Clause",
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "globals\\": "src/"
+    },
+    "files": ["src/globals.php"]
+  }
+}
