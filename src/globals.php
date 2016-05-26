@@ -27,3 +27,8 @@ function ed($var)
     echo $var;
     die;
 }
+
+function showSql(\yii\db\Query $select)
+{
+    return $select->prepare(Yii::$app->db->queryBuilder)->createCommand()->rawSql;
+}
