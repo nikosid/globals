@@ -28,12 +28,12 @@ function ed($var)
     die;
 }
 
-function showSql(\yii\db\Query $select)
+function getsql(\yii\db\Query $select)
 {
     return $select->prepare(Yii::$app->db->queryBuilder)->createCommand()->rawSql;
 }
 
-function ddSql(\yii\db\Query $select)
+function ddsql(\yii\db\Query $select)
 {
-    dd(showSql($select));
+    dd(getsql($select));
 }
