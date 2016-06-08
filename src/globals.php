@@ -28,12 +28,26 @@ function ed($var)
     die;
 }
 
-function getsql(\yii\db\Query $select)
+/**
+ * @param \yii\db\Query $select
+ * @param \yii\db\Connection $db
+ * @return string
+ */
+function getsql(\yii\db\Query $select, $db = null)
 {
-    return $select->prepare(Yii::$app->db->queryBuilder)->createCommand()->rawSql;
+    dd($db);
+    if ($db === null) {
+        $db = Yii::$app->getDb();
+    }
+    return $select->prepare(Yii::$app->db->queryBuilder)->createCommand($db)->rawSql;
 }
 
-function ddsql(\yii\db\Query $select)
+/**
+ * @param \yii\db\Query $select
+ * @param \yii\db\Connection $db
+ */
+function ddsql(\yii\db\Query $select, $db = null)
 {
-    dd(getsql($select));
+    dd(getsql($select, $db));
 }
+
