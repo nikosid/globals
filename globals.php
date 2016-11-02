@@ -1,10 +1,6 @@
 <?php
 
-$is_cli = false;
-
-if (PHP_SAPI == 'cli') {
-    $is_cli = true;
-}
+define('IS_CLI', ('cli' == PHP_SAPI));
 
 function d($var)
 {
@@ -15,10 +11,9 @@ function d($var)
 
 function dd($var)
 {
-    global $is_cli;
-    echo $is_cli ? '' : '<pre>';
+    echo IS_CLI ? '' : '<pre>';
     var_dump($var);
-    echo $is_cli ? '' : '</pre>';
+    echo IS_CLI ? '' : '</pre>';
     die;
 }
 
