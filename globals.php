@@ -30,7 +30,6 @@ function ed($var)
  */
 function getsql(\yii\db\Query $select, $db = null)
 {
-    dd($db);
     if ($db === null) {
         $db = Yii::$app->getDb();
     }
