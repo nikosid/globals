@@ -2,25 +2,45 @@
 
 define('IS_CLI', ('cli' == PHP_SAPI));
 
-function d($var)
+if (! function_exists('d')) {
+/**
+ * Dump the passed variables and end the script.
+ *
+ * @param mixed
+ */
+function d()
 {
-    echo '<pre>';
-    var_dump($var);
-    echo '</pre>';
+    array_map(function ($x) {
+        var_dump($x);
+    }, func_get_args());
+}
 }
 
-function dd($var)
-{
-    echo IS_CLI ? '' : '<pre>';
-    var_dump($var);
-    echo IS_CLI ? '' : '</pre>';
-    die;
+if (! function_exists('dd')) {
+    /**
+     * Dump the passed variables and end the script.
+     *
+     * @param mixed
+     */
+    function dd()
+    {
+        array_map(function ($x) {
+            var_dump($x);
+        }, func_get_args());
+
+        die(1);
+    }
 }
 
-function ed($var)
-{
-    echo $var;
-    die;
+if (! function_exists('ed')) {
+    /**
+     * @param string $var
+     */
+    function ed($var)
+    {
+        echo $var;
+        die(1);
+    }
 }
 
 /**
@@ -44,4 +64,3 @@ function ddsql(\yii\db\Query $select, $db = null)
 {
     dd(getsql($select, $db));
 }
-
