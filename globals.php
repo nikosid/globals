@@ -1,5 +1,7 @@
 <?php
 
+use yii\helpers\VarDumper;
+
 define('IS_CLI', ('cli' == PHP_SAPI));
 
 if (! function_exists('d')) {
@@ -39,6 +41,22 @@ if (! function_exists('ed')) {
     function ed($var)
     {
         echo $var;
+        die(1);
+    }
+}
+
+if (! function_exists('vdd')) {
+    /**
+     * Dump the passed variables and end the script.
+     *
+     * @param mixed
+     */
+    function vdd()
+    {
+        array_map(function ($x, $depth = 10, $highlight = true) {
+            VarDumper::dump($x, $depth, $highlight);
+        }, func_get_args());
+
         die(1);
     }
 }
