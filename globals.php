@@ -2,23 +2,23 @@
 
 use yii\helpers\VarDumper;
 
-define('IS_CLI', ('cli' == PHP_SAPI));
+define('IS_CLI', 'cli' === PHP_SAPI);
 
-if (! function_exists('d')) {
-/**
- * Dump the passed variables and end the script.
- *
- * @param mixed
- */
-function d()
-{
-    array_map(function ($x) {
-        var_dump($x);
-    }, func_get_args());
-}
+if (!function_exists('d')) {
+    /**
+     * Dump the passed variables and end the script.
+     *
+     * @param mixed
+     */
+    function d()
+    {
+        array_map(function ($x) {
+            var_dump($x);
+        }, func_get_args());
+    }
 }
 
-if (! function_exists('dd')) {
+if (!function_exists('dd')) {
     /**
      * Dump the passed variables and end the script.
      *
@@ -34,7 +34,7 @@ if (! function_exists('dd')) {
     }
 }
 
-if (! function_exists('ed')) {
+if (!function_exists('ed')) {
     /**
      * @param string $var
      */
@@ -45,7 +45,7 @@ if (! function_exists('ed')) {
     }
 }
 
-if (! function_exists('vdd')) {
+if (!function_exists('vdd')) {
     /**
      * Dump the passed variables and end the script.
      *
