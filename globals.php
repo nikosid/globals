@@ -13,7 +13,7 @@ if (!function_exists('d')) {
     function d()
     {
         array_map(function ($x) {
-            dump($x);
+            var_dump($x);
         }, func_get_args());
     }
 }
@@ -27,7 +27,7 @@ if (!function_exists('dd')) {
     function dd()
     {
         array_map(function ($x) {
-            dump($x);
+            var_dump($x);
         }, func_get_args());
 
         die(1);
@@ -55,6 +55,36 @@ if (!function_exists('vdd')) {
     {
         array_map(function ($x, $depth = 10, $highlight = true) {
             VarDumper::dump($x, $depth, $highlight);
+        }, func_get_args());
+
+        die(1);
+    }
+}
+
+if (!function_exists('sd')) {
+    /**
+     * Dump the passed variables and end the script. Symphony style.
+     *
+     * @param mixed
+     */
+    function sd()
+    {
+        array_map(function ($x) {
+            dump($x);
+        }, func_get_args());
+    }
+}
+
+if (!function_exists('sdd')) {
+    /**
+     * Dump the passed variables and end the script. Symphony style.
+     *
+     * @param mixed
+     */
+    function sdd()
+    {
+        array_map(function ($x) {
+            dump($x);
         }, func_get_args());
 
         die(1);
