@@ -5,8 +5,7 @@
   "license": "BSD-3-Clause",
   "require": {
     "php": ">=5.4.0",
-    "yiisoft/yii2": "~2.0.6",
-    "symfony/var-dumper": "^4.1"
+    "yiisoft/yii2": "~2.0.6"
   },
   "minimum-stability": "dev",
   "autoload": {

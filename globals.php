@@ -61,36 +61,6 @@ if (!function_exists('vdd')) {
     }
 }
 
-if (!function_exists('sd')) {
-    /**
-     * Dump the passed variables and end the script. Symphony style.
-     *
-     * @param mixed
-     */
-    function sd()
-    {
-        array_map(function ($x) {
-            dump($x);
-        }, func_get_args());
-    }
-}
-
-if (!function_exists('sdd')) {
-    /**
-     * Dump the passed variables and end the script. Symphony style.
-     *
-     * @param mixed
-     */
-    function sdd()
-    {
-        array_map(function ($x) {
-            dump($x);
-        }, func_get_args());
-
-        die(1);
-    }
-}
-
 /**
  * @param \yii\db\Query $select
  * @param \yii\db\Connection $db
