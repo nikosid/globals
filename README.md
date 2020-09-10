@@ -9,13 +9,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-composer require "nikosid/globals:dev-master"
+composer require nikosid/globals
 ```
 
 or add
 
 ```
-"nikosid/globals": "dev-master"
+"nikosid/globals": "~0.0.1"
 ```
 
 to the require section of your `composer.json` file.
